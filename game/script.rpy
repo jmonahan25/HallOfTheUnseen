@@ -60,7 +60,7 @@ label start:
 
     cr "I will never understand freshmen. It's like they're constantly trying to make a new level on dumb ways to die."
 
-    "You and Laura start your rounds and simataneously hear 4 sounds coming from opposite directions."
+    "You and Laura start your rounds and simultaneously hear 4 sounds coming from opposite directions."
 
     # This ends the game.
 
