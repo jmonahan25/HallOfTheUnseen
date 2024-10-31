@@ -3,10 +3,15 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define sp = Character("Front Desk Worker")
+define fd = Character("Front Desk Worker")
 
-define cr = Character("Laura")
+define lr = Character("Laura")
 
+transform half_size:
+    zoom 0.5 #adjust as needed
+
+transform double_size:
+    zoom 2 #adjust as needed
 
 # The game starts here.
 
@@ -16,7 +21,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg dormroom
+    scene bg desk at half_size
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -30,17 +35,25 @@ label start:
 
     define yn = Character("[name]")
 
-    show sponge happy
+    show guy talk at double_size
 
     # These display lines of dialogue.
 
-    sp "How can I help you?"
+    fd "How can I help you?"
+
+    hide guy talk
+
+    show guy smile at double_size
 
     yn "Hey, I'm here to get that annoying ass duty phone, and pick up my new badge."
 
-    sp "Alriiight, here you go! Good luck, it's thirsty thursday!"
+    hide guy smile
 
-    hide sponge happy
+    show guy talk at double_size
+
+    fd "Alriiight, here you go! Good luck, it's thirsty thursday!"
+
+    hide guy talk
 
     "It was a typical September Thursday."
 
@@ -52,13 +65,21 @@ label start:
 
     vb "Welp, guess we're gonna be calling paramedics tonight"
 
-    show courage happy
+    show laura smile at double_size
 
     "You turn and see Laura (your duty partner for the night)"
 
     yn "Don't jinx us! I heard on Saturday they had to call the paramedics 6 times because some fratboys were so mad we lost the game that they decided to mix whisky and vodka and then ate an edible."
 
-    cr "I will never understand freshmen. It's like they're constantly trying to make a new level on dumb ways to die."
+    hide laura smile
+
+    show laura talk at double_size
+    
+    lr "I will never understand freshmen. It's like they're constantly trying to make a new level on dumb ways to die."
+
+    hide laura talk
+
+    show laura smile at double_size
 
     "You and Laura start your rounds and simultaneously hear 4 sounds coming from opposite directions."
 
