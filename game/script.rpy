@@ -83,6 +83,10 @@ label start:
 
     "You and Laura start your rounds and simultaneously hear 4 sounds coming from opposite directions."
 
+    hide laura smile
+
+    "To be continued..."
+
     # This ends the game.
 
     return
