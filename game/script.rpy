@@ -85,7 +85,29 @@ label start:
 
     hide laura smile
 
-    "To be continued..."
+    menu:
+        "Go towards the scream":
+            jump scream_path
+
+        "Go towards the crash":
+            jump crash_path
+
+    label scream_path:
+        scene bg hallway at half_size
+
+        lr "We are running down the hallway now"
+
+        jump done
+
+    label crash_path:
+        scene bg laundry at half_size
+
+        lr "Now we are in the laundry room"
+
+        jump done
+
+    label done:
+        "To be continued..."
 
     # This ends the game.
 
