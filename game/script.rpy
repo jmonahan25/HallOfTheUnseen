@@ -132,6 +132,8 @@ label start:
 
         scene bg dorm body at half_size
 
+        play music "dark_ambient.mp3" fadeout 1
+
         ""
 
         define v1 = Character("Dying Student")
@@ -191,6 +193,8 @@ label start:
         jump done
 
     label done:
+        stop music fadeout 1
+
         "To be continued..."
 
     # This ends the game.
