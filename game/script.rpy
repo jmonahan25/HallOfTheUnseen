@@ -8,6 +8,7 @@ define fd = Character("Front Desk Worker")
 define lr = Character("Laura")
 
 transform half_size:
+    xpos 100
     zoom 0.5 #adjust as needed
 
 transform quarter_size:
@@ -130,7 +131,12 @@ label start:
 
         hide laura surprised
 
-        scene bg dorm body at half_size
+        transform half_size_down:
+            xpos 100
+            ypos -200
+            zoom 0.5 #adjust as needed
+
+        scene bg dorm body at half_size_down
 
         play music "dark_ambient.mp3" fadeout 1
 
@@ -186,9 +192,15 @@ label start:
         jump done
 
     label crash_path:
-        scene bg laundry at half_size
+        show laura nervous at double_size
 
-        lr "Now we are in the laundry room"
+        lr "Oh shit where should we go?"
+
+        yn "To the crash! We need to figure out what the hell made that sound!"
+
+        hide laura nervous
+
+
 
         jump done
 
