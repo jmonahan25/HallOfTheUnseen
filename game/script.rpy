@@ -35,25 +35,25 @@ label start:
 
     define yn = Character("[name]")
 
-    show guy talk at double_size
+    show bodhi wave at half_size
 
     # These display lines of dialogue.
 
     fd "How can I help you?"
 
-    hide guy talk
+    hide bodhi wave
 
-    show guy smile at double_size
+    show bodhi neutral
 
     yn "Hey, I'm here to get that annoying ass duty phone, and pick up my new badge."
 
-    hide guy smile
+    hide bodhi neutral
 
-    show guy talk at double_size
+    show bodhi wave at half_size
 
     fd "Alriiight, here you go! Good luck, it's thirsty thursday!"
 
-    hide guy talk
+    hide bodhi wave
 
     "It was a typical September Thursday."
 
@@ -93,9 +93,88 @@ label start:
             jump crash_path
 
     label scream_path:
+        show laura nervous at double_size
+
+        lr "Oh shit where should we go?"
+
+        yn "To the scream! We need to make sure they're ok"
+
+        hide laura nervous
+
         scene bg hallway at half_size
 
-        lr "We are running down the hallway now"
+        "You run towards the scream and see a group of residents crowded outside room 219"
+
+        define bd = Character("Resident")
+
+        show bodhi scared
+
+        bd "Oh thank god the House Fellows are here! Please help her!"
+
+        hide bodhi scared
+
+        show laura talk at double_size
+
+        lr "Don't worry, we got you, what's the problem?"
+
+        hide laura talk
+
+        show laura surprised at double_size
+
+        "Laura stops in the middle of her sentence and her eyes widen"
+
+        hide laura surprised
+
+        scene bg dorm body at half_size
+
+        ""
+
+        define v1 = Character("Dying Student")
+
+        menu:
+            "Immediately call 911":
+                jump scream_911
+
+            "Try to help the student":
+                jump scream_help
+
+            "Stand in shock":
+                jump scream_shock
+
+        label scream_911:
+            "The paramedics arrive and take away the student's body. It is soon discovered that this wasn't a freak accident. It was a homicide."
+
+            jump done
+
+        label scream_help:
+            "You run over to the student's body and begin to try and give CPR"
+
+            "The student slowly opens their eyes"
+
+            v1 "This is your fault..."
+
+            yn "What the fuck are you talking about?!"
+
+            "The resident dies in your arms, leaving you confused and waiting for the paramedics"
+
+            "The only thing you know is this is somehow connected to you"
+
+            jump done
+
+        label scream_shock:
+            "The residents watch you standing in shock and grow increasingly frustrated"
+
+            show bodhi angry
+
+            bd "Why aren't you doing something?!"
+
+            yn "Shi! I'm sorry, Laura I'll call 911!"
+
+            hide bodhi angry
+
+            "The residents watch you call 911 but now look at you with a suspicious gaze"
+
+            jump done
 
         jump done
 
