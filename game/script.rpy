@@ -10,6 +10,11 @@ define lr = Character("Laura")
 transform half_size:
     zoom 0.5 #adjust as needed
 
+transform quarter_size:
+    xpos 500
+    ypos -100
+    zoom 0.3 #adjust as needed
+
 transform double_size:
     zoom 2 #adjust as needed
 
@@ -35,7 +40,7 @@ label start:
 
     define yn = Character("[name]")
 
-    show bodhi wave at half_size
+    show bodhi wave at quarter_size
 
     # These display lines of dialogue.
 
@@ -49,7 +54,7 @@ label start:
 
     hide bodhi neutral
 
-    show bodhi wave at half_size
+    show bodhi wave at quarter_size
 
     fd "Alriiight, here you go! Good luck, it's thirsty thursday!"
 
