@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 25: expected statement.
-    name = renpy.input("What's your name?")
-         ^
-
-File "game/script.rpy", line 26: expected statement.
-    name = name.strip() or "Jake Statefarm"
-         ^
+File "game/script.rpy", line 98: expected menuitem
+    //"Go towards the crash":
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Oct 28 17:21:06 2024
+Thu Nov 21 09:54:14 2024
