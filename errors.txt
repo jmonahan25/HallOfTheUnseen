@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 98: expected menuitem
-    //"Go towards the crash":
+File "game/script.rpy", line 144: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    menu:
     ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Thu Nov 21 09:54:14 2024
+Thu Dec  5 08:48:55 2024

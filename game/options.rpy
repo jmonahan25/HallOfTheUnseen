@@ -152,6 +152,8 @@ define config.save_directory = "HallsoftheUnseen-1729786978"
 
 define config.window_icon = "gui/window_icon.png"
 
+define config.menu_include_disabled = True
+
 
 ## Build configuration #########################################################
 ##
