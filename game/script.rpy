@@ -788,7 +788,7 @@ label y_path:
         "They confirm the presence of gunpowder residue on Gabbi's ID and begin compiling their case."
         "A city-wide manhunt for Gabbi begins, the news spreads quickly, and everyone seems to be on edge."
         "Three days later, a breaking news update announces that Gabbi has been caught."
-        if bag_flag:
+        if (bag_flag and evidence_flag):
             jump good_end
         else:
             jump bad_end
