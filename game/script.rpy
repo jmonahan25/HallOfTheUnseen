@@ -41,6 +41,8 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
+    play music "cool-suspense.mp3"
+
     "You're reporting for another day of being an RA, but you have to pick up a new badge."
 
     python:
@@ -95,20 +97,22 @@ label start:
 
     show emma happy at half_size
 
-    "You and Emma start your rounds and simultaneously hear 4 sounds coming from opposite directions."
+    stop music
+
+    "You and Emma are about to start your rounds when you hear a loud scream coming from one of the floors above you!"
 
     hide emma happy
 
     menu:
-        "Go towards the scream":
+        "Run towards the scream":
             jump scream_path
 
     label scream_path:
         show emma shocked at half_size
 
-        lr "Oh shit where should we go?"
+        lr "Oh shit what should we do?"
 
-        yn "To the scream! We need to make sure they're ok!"
+        yn "We have to find where that came from to make sure they're ok!"
 
         hide emma shocked
 
@@ -396,11 +400,15 @@ label y_path:
 
     show emma question at half_size
 
+    play music "cool-suspense.mp3"
+
     define phone_choice = 2
 
     define dm_flag = False
 
     "The hallway is tense as you and Emma discuss your next steps. It's clear that more investigation is needed, and Gabbi might be involved."
+    if (not CPhone):
+        lr "I managed to find her phone while we were looking around, there might be something important on it!"
     "You have the victim's phone in your hand"
     "The screen is cracked, and the battery is at 1%%. You manage to unlock it using Tori's birthday as the passcode."
 
@@ -539,6 +547,8 @@ label y_path:
         jump done
     label laundry_path:
         scene bg laundry at half_size
+        stop music fadeout 2
+        play music "dark-ambient.mp3"
         "The laundry room hums quietly with not a soul in sight. A faint smell of detergent mingles wih something metallic and sharp in the air."
         yn "Augh... what was I looking for again?"
         define laundry_choice = 2
@@ -589,6 +599,8 @@ label y_path:
                             hide evidence trash
                             jump lobby_path
     label lobby_path:
+        stop music fadeout 1
+        play music "cool-suspense.mp3"
         scene bg lobby at half_size
         "You arrive in the lobby, spotting Emma pacing near the front desk. She looks up as you approach, her face tense."
         show emma mad at half_size
@@ -666,6 +678,7 @@ label y_path:
                             hide emma mad
                             menu:
                                 "Go to kitchen":
+                                    stop music fadeout 1
                                     jump kitchen_path
                                 "Keep questioning":
                                     $ bodhi_count -= 1
@@ -733,6 +746,7 @@ label y_path:
     
     label kitchen_path:
         scene bg kitchen at half_size
+        play music "dark-ambient.mp3"
         "You enter the kitchen, the fluorescent lights flickering overhead, casting a dim glow across the space."
         "The place is a mess with dirty dishes piled high.The faint smell of a burning aroma lingered in the air."
         show emma mad at half_size
@@ -772,6 +786,7 @@ label y_path:
                     lr "Is that... Gabbi's ID?"
                     jump conclusion
     label conclusion:
+        stop music fadeout 1
         yn "This is it! We've got her ID, and there's gunpowder residue on it... she killed Tori!"
         show emma crossed at half_size
         lr "It has to be! I mean, this is the evidence we needed. No doubt about it."
@@ -795,6 +810,7 @@ label y_path:
 
 
     label good_end:
+        play music "cool-suspense.mp3"
         scene bg lobby at half_size
         "She was apprehended at Dane County Airport, trying to flee the city. The authorities bring her in for questioning, and after hours of interrogation, Gabbi confesses to the crime."
         define gc = Character("Gabbi's Confession")
@@ -809,6 +825,7 @@ label y_path:
 
 
     label bad_end:
+        play music "spooky-horror-piano.mp3"
         scene bg lobby at half_size
         "Without enough physical evidence to confirm her guilt, the authorities are forced to let her go. Gabbi walks free, and despite the initial relief of her capture, the case remains unsolved."
         define gr = Character("Gabbi's Statement")
